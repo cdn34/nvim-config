@@ -1,0 +1,7 @@
+require("carlosn34.config.nvim-telescope")
+require("carlosn34.config.nvim-treesitter")
+require("carlosn34.config.which-key")
+require("carlosn34.config.nvim-lspconfig")
+require("carlosn34.config.nvim-cmp")
+require("carlosn34.config.nvim-tree")
+require("carlosn34.config.formatter")
