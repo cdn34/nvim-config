@@ -57,33 +57,39 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", {
     desc = "Open current buffer in new tab"
 }) --  move current buffer to new tab
 
+keymap.set("n", "<leader>.", "<cmd>tabn<CR>", {
+    desc = "Go to next tab"
+}) --  go to next tab
+keymap.set("n", "<leader>,", "<cmd>tabp<CR>", {
+    desc = "Go to previous tab"
+}) --  go to previous tab
 -- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({'n', 'v'}, '<Space>', '<Nop>', {
+-- See `:help keymap.set()`
+keymap.set({'n', 'v'}, '<Space>', '<Nop>', {
     silent = true
 })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {
-    expr = true,
-    silent = true
-})
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", {
-    expr = true,
-    silent = true
-})
+-- keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {
+--     expr = true,
+--     silent = true
+-- })
+-- keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", {
+--     expr = true,
+--     silent = true
+-- })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {
+keymap.set('n', '[d', vim.diagnostic.goto_prev, {
     desc = 'Go to previous diagnostic message'
 })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {
+keymap.set('n', ']d', vim.diagnostic.goto_next, {
     desc = 'Go to next diagnostic message'
 })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
+keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
     desc = 'Open floating diagnostic message'
 })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {
     desc = 'Open diagnostics list'
 })
 
@@ -100,5 +106,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*'
 })
 
-vim.keymap.set("n", "<leader>ll", ":Format<CR>")
-vim.keymap.set("n", "<leader>lp", ":FormatWrite<CR>")
+-- Formatting
+keymap.set("n", "<leader>ll", ":Format<CR>")
+keymap.set("n", "<leader>lp", ":FormatWrite<CR>")
+
+-- Typescript specifics
+keymap.set("n", "<leader>mi", ":TSToolsAddMissingImports<CR>")
+keymap.set("n", "<leader>oi", ":TSToolsOrganizeImports<CR>")
+keymap.set("n", "<leader>si", ":TSToolsSortImports<CR>")
+keymap.set("n", "<leader>gd", ":TSToolsGoToSourceDefinition<CR>")
+keymap.set("n", "<leader>ru", ":TSToolsRemoveUnused<CR>")
+keymap.set("n", "<leader>ri", ":TSToolsRemoveUnusedImports<CR>")
+keymap.set("n", "<leader>rf", ":TSToolsRenameFile<CR>")
+
+-- Tailwind
+keymap.set("n", "<leader>tls", ":TailwindSort<CR>")
+keymap.set("n", "<leader>tlst", ":TailwindSortOnSaveToggle<CR>")
+
+
+keymap.set("n", "C-s>", ":w<CR>")
