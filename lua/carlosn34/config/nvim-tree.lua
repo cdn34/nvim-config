@@ -10,7 +10,7 @@ local nvimtree = require("nvim-tree")
 -- configure nvim-tree
 nvimtree.setup({
     view = {
-        width = 35,
+        width = 50,
         relativenumber = true
     },
     -- disable window_picker for

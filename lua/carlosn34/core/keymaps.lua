@@ -69,6 +69,13 @@ keymap.set({'n', 'v'}, '<Space>', '<Nop>', {
     silent = true
 })
 
+
+
+-- LazyGit
+keymap.set("n", "<leader>gg", ":LazyGit<CR>", {
+    silent = true
+})
+
 -- Remap for dealing with word wrap
 -- keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {
 --     expr = true,
@@ -125,3 +132,20 @@ keymap.set("n", "<leader>tlst", ":TailwindSortOnSaveToggle<CR>")
 
 
 keymap.set("n", "C-s>", ":w<CR>")
+
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_no_tab_map = true
+
+keymap.set('i', '<C-l>', 'copilot#Accept()', {
+    expr = true,
+    silent = true,
+    noremap = true,
+})
+keymap.set('i', '<C-j>', 'copilot#Previous()', {
+    expr = true,
+    silent = true
+})
+keymap.set('i', '<C-k>', 'copilot#Next()', {
+    expr = true,
+    silent = true
+})
